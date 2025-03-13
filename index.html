@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Social Apps Redirection</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="SHORTCUT ICON" id="favicon" href="https://web.whatsapp.com/favicon-64x64.ico" type="image/x-icon">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <script>
+      let param = new URLSearchParams(window.location.search);
+      let appName = param.get('app_name') || 'whatsapp';
+
+      let faviconHash = {
+        whatsapp: "https://web.whatsapp.com/favicon-64x64.ico",
+        telegram: "https://web.telegram.org/k/assets/img/favicon.ico?v=jw3mK7G9Ry",
+        wechat: "https://www.wechat.com/favicon.ico"
+      }
+      let faviconElement = document.getElementById("favicon");
+      if (faviconElement) {
+        faviconElement.href = faviconHash[appName] || "https://web.whatsapp.com/favicon-64x64.ico";
+      }
+
+      let pageTitleHash = {
+        whatsapp: "WhatsApp Download",
+        telegram: "Telegram Download",
+        wechat: "Wechat Download"
+      };
+      document.title = pageTitleHash[appName] || "Download WhatsApp";
+    </script>
+    <style>
+      .hello-container {
+        margin: 15% auto 0;
+        border-radius: 10px;
+        max-width: 350px;
+        text-align: center;
+        box-shadow: 0 4px 12px 0 rgba(0,0,0,.15);
+      }
+      @media screen and (max-width: 1024px) {
+        .hello-container {
+          margin-top: 45%;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        .hello-container {
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hello-container">Hello Deepak</div>
+  </body>
+</html>
